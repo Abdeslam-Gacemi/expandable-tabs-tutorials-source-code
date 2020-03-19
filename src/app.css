@@ -1,0 +1,96 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #2C42BD;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item {
+    width: 700px;
+    max-height: 100px;
+    padding: 0px 50px;
+    overflow: hidden;
+    background: #3951E1;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 10px;
+    transition: .5s ease;
+    font-weight: 500;
+}
+
+.item:hover {
+    box-shadow: 0px 0px 2px rgba(0,0,0,.3), 0px 0px 10px rgba(0,0,0, .18);
+}
+
+.expanded {
+    max-height: 400px;
+    background: white;
+    color: #333;
+}
+
+.item .content {
+    margin-bottom: 30px;
+    opacity: .9;
+    line-height: 30px;
+}
+
+.item .title {
+    line-height: 100px;
+    font-size: 24px;
+    position: relative;
+}
+
+.item .title .btn {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.item .title .btn::before,
+.item .title .btn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 3px;
+    background: white;
+    transition: .5s ease;
+}
+
+.item .title .btn::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    transform: translateY(-50%);
+}
+
+.item .title .btn::after {
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.item .title .clicked::before,
+.item .title .clicked::after {
+    background: #333;
+}
+
+.item .title .clicked::after {
+    transform: rotate(90deg);
+    opacity: 0;
+}
